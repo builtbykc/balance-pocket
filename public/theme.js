@@ -1,0 +1,2 @@
+// Run before the page paints so a saved preference does not flash the wrong theme.
+(function(){var mode='system';try{var saved=localStorage.getItem('balance-pocket-theme');if(saved==='light'||saved==='dark')mode=saved;}catch(e){}var dark=mode==='dark'||(mode==='system'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.dataset.theme=dark?'dark':'light';var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute('content',dark?'#0d1523':'#f3f6fa');})();
